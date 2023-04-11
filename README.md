@@ -7,6 +7,27 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 
 
 
+## [Installing Scripts](https://github.com/MokshC/Resolve-Scripts/archive/refs/heads/main.zip)
+***Note**: Visible scripts change based on the page you’re on, there are folders within the scripts dropdown like “Edit”, “Color”, and “Deliver”. When on one of those pages the scripts showing will be from those folders. You can still access them from any page by navigating the drop downs.*
+
+### Steps
+1. In Resolve open the Fusion page, in the toolbar click “Fusion > Fusion Settings”
+2. Click “Path Map” in the Fusion drop down of the settings window, and make sure “Scripts” is set to “UserPaths:Scripts”. If not, hit the “Reset” button.
+3. Click "Script" in the Fusion drop down of the settings window, change selection from python 2.7 to python 3
+   - This step is only Resolve version 18.1.4 or later
+4. Hit the save button to update all of your changes
+5. [Download this repository](https://github.com/MokshC/Resolve-Scripts/archive/refs/heads/main.zip)
+6. Unzip and add it to your scripts path. These paths can also be found by clicking the folder icon at the bottom right of "Path Map" from step 2.
+   - **LINUX**: Home/.local/share/DaVinciResolve/Fusion/Scripts
+     - Hint: if you can’t find .local try hitting Ctrl+H to show hidden folders
+   - **WINDOWS**: C:\Users\{NAME}\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusion\Scripts
+     - Hint: if you can’t find AppData try going to View > Hidden items in file explorer and hitting the checkbox 
+   - **MAC**: /Library/Application Support/Blackmagic Design/Fusion/Scripts
+7. Restart Resolve
+8. Now when you go open Resolve and, in the toolbar, click “Workspace > Scripts” several scripts should be available.
+   
+   
+   
 ## [Clip Disabler](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_4.py)
 ### Description
 Used to disable clips and flip marker colors and names.

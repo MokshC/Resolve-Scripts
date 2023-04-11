@@ -3,7 +3,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 
 ## Things to be aware of
 - The below tutorials assume you copied my file structure in your Resolve Scripts folder
-- This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows 
+- This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows except the Recap Assist. Recap Assist is Linux only.
 
 
 
@@ -42,7 +42,7 @@ Flips marker colors and names for a selected marker color.
 
 ## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
 ### Description
-Grabs stills for a recaps using a recap timeline and a search timeline.
+Grabs stills for a recaps using a recap timeline and a search timeline. **Linux Only**
 
 ### Steps
 1. Open every project you would like to search for recap shots in read only then open the project with the recap you are tracing to.

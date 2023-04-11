@@ -142,8 +142,8 @@ Can rename or renumber any image sequence, or any set of files in general!
 3. To select search path, click “Select Tiff Location” and navigate to the desired folder then click “Choose”.
    - **Hint**: You won’t see the image sequence there since this view only shows folders.
    - **Hint**: The “Please select a folder” text should change to the path you’ve selected.
-4. Use the drop down to select how the file number is separate from the name in the current name. (ex. For “.” the name would look like NAPA_UDH_HDR.0068180.tif)
-5. Use the “Digits in filename” carousel to select how many digits you want in the new filename. (ex. For “7” NAPA_UDH_HDR.0068180.tif)
+4. Use the drop down to select how the file number is separate from the name in the current name. (ex. For “.” the name would look like NAME_UDH_HDR.0068180.tif)
+5. Use the “Digits in filename” carousel to select how many digits you want in the new filename. (ex. For “7” NAME_UDH_HDR.0068180.tif)
 6. Fill the “Starting Frame” text box with what you would like the new starting frame number to be
 7. Hit “Renumber!” to enact changes!
 

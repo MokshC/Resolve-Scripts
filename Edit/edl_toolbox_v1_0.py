@@ -289,7 +289,13 @@ def _new_tracks(ev):
 def _file_browser(ev):
 	global filePath
 	filePath = fu.RequestFile()
-	itm["EDL_path"].Text = str(filePath[filePath.rfind('/')+1:])
+
+        # this if statement avoids erros from different operating systems
+        if sys.platform.startswith("darwin") or sys.platform.startswith("linux"):
+            itm["EDL_path"].Text = str(filePath[filePath.rfind('/')+1:])
+        else:
+            itm["EDL_path"].Text = str(filePath[filePath.rfind('\\')+1:])
+            
 
 # adds clip markers to EDL as locators
 # input: currentClip [item], timeline [item], newf [file with write permission]
@@ -433,7 +439,13 @@ def _main(ev):
 	# File operations
 	f = open(filePath, "r")	# get EDL path
 	edl = f.readlines()	# get EDL lines
-	newPath = filePath[:filePath.rfind('/')+1] + 'new_' + itm["EDL_path"].Text
+
+        # this if statement avoids erros from different operating systems
+        if sys.platform.startswith("darwin") or sys.platform.startswith("linux"):
+            newPath = filePath[:filePath.rfind('/')+1] + 'new_' + itm["EDL_path"].Text
+        else:
+            newPath = filePath[:filePath.rfind('\\')+1] + 'new_' + itm["EDL_path"].Text
+
 	newf = open(newPath, "w")	# write EDL path
 
 	# Collecting information

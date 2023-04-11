@@ -1,11 +1,13 @@
 # Resolve-Scripts
 Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/). All of these are scripts I use professionally, and they greatly improve my workflow. I believe everyone should have access to them, so here they are.
 
+<br/><br/>
+
 ## Things to be aware of
 - The below tutorials assume you copied my file structure in your Resolve Scripts folder
 - This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows.
 
-
+<br/><br/>
 
 ## [Installing Scripts](https://github.com/MokshC/Resolve-Scripts/archive/refs/heads/main.zip)
 ***Note**: Visible scripts change based on the page you’re on, there are folders within the scripts dropdown like “Edit”, “Color”, and “Deliver”. When on one of those pages the scripts showing will be from those folders. You can still access them from any page by navigating the drop downs.*
@@ -26,7 +28,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 7. Restart Resolve
 8. Now when you go open Resolve and, in the toolbar, click “Workspace > Scripts” several scripts should be available.
    
-   
+<br/><br/>
    
 ## [Clip Disabler](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_4.py)
 ### Description
@@ -45,7 +47,7 @@ The drop down, text box, and “Flip Marker” button all work together.
    - **Hint**: Leaving it blank leaves the name unchanged, it doesn’t delete it.
 3. Have your play head on a marker and click “Flip Marker” to enact changes!
 
-
+<br/><br/>
 
 ## [Marker Flipper](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/marker_flipper_v1_1.py)
 ### Description
@@ -59,7 +61,7 @@ Flips marker colors and names for a selected marker color.
    - **Hint**: Leaving it blank leaves the name unchanged, it doesn’t delete it.
 4. Hit the “Flip!” button to enact changes!
 
-
+<br/><br/>
 
 ## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
 ### Description
@@ -77,7 +79,7 @@ Grabs stills for a recaps using a recap timeline and a search timeline.
 9. Click “Grab Stills” to start the search!
 10. Read the warning splash, click “Done!”
 
-
+<br/><br/>
 
 ## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
 ### Description
@@ -92,7 +94,7 @@ Adds various information to EDL from metadata, the timeline, and individual clip
 6. In the checkboxes below select all the information you want to add to the EDL
 7. Click "Add to EDL!". A new EDL should be created in the same location with the name new_[name of EDL]
 
-
+<br/><br/>
 
 ## [Marker Note Exporter](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/marker_notes_exporter_v1_3.py)
 ### Description
@@ -107,7 +109,7 @@ Creates a .txt document with all marker names, notes, and timecodes in timecode 
    - **Hint**: The “Please select a folder” text should change to the path you’ve selected.
 6. Click “Create .txt” to export a text document with the above settings.
 
-
+<br/><br/>
 
 ## [Markers to Render Queue](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/markers_to_render_queue_v1_5.py)
 ### Description
@@ -125,7 +127,7 @@ Exports sections of timeline covered by markers, 1 frame for single marker or lo
    - **Hint**: The “Please select a folder” text should change to the path you’ve selected.
 8. Click “Add to Render Queue” to populate the render queue with all the markers in the timeline with the settings you just filled out!
 
-
+<br/><br/>
 
 ## [Individual Clips to Render Queue](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/individual_clips_to_render_queue_v1_3.py)
 ### Description
@@ -141,7 +143,7 @@ Adds all clips from a selected timeline to the render queue with specified setti
    - **Hint**: The “Please select a folder” text should change to the path you’ve selected.
 7. Click “Add to Render Queue” to populate the render queue with all the clips in the timeline with the settings you just filled out!
 
-
+<br/><br/>
 
 ## [Renamer and Renumber](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/Rename_Renumber_v1_3.py)
 ### Description

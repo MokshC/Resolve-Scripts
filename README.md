@@ -3,7 +3,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 
 ## Things to be aware of
 - The below tutorials assume you copied my file structure in your Resolve Scripts folder
-- This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows except the Recap Assist. Recap Assist is Linux only.
+- This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows except the EDL Toolbox. EDL Toolbox is Linux only.
 
 
 
@@ -42,7 +42,7 @@ Flips marker colors and names for a selected marker color.
 
 ## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
 ### Description
-Grabs stills for a recaps using a recap timeline and a search timeline. **Linux Only**
+Grabs stills for a recaps using a recap timeline and a search timeline.
 
 ### Steps
 1. Open every project you would like to search for recap shots in read only then open the project with the recap you are tracing to.
@@ -60,7 +60,7 @@ Grabs stills for a recaps using a recap timeline and a search timeline. **Linux 
 
 ## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
 ### Description
-Adds various information to EDL from metadata, the timeline, and individual clip data.
+Adds various information to EDL from metadata, the timeline, and individual clip data. **Linux Only**
 
 ### Steps
 1. In Resolve, export your EDL as you normally do.

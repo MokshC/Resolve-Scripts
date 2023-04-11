@@ -3,7 +3,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 
 ## Things to be aware of
 - The below tutorials assume you copied my file structure in your Resolve Scripts folder
-- This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows except the EDL Toolbox. EDL Toolbox is Linux only.
+- This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows.
 
 
 
@@ -60,7 +60,7 @@ Grabs stills for a recaps using a recap timeline and a search timeline.
 
 ## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
 ### Description
-Adds various information to EDL from metadata, the timeline, and individual clip data. **Linux Only**
+Adds various information to EDL from metadata, the timeline, and individual clip data.
 
 ### Steps
 1. In Resolve, export your EDL as you normally do.

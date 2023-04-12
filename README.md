@@ -94,7 +94,7 @@ Grabs stills for a recaps using a recap timeline and a search timeline.
 
 <br/><br/>
 
-## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)<a name="edl-toolbox"/>
+## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Edit/edl_toolbox_v1_0.py)<a name="edl-toolbox"/>
 ### Description
 Adds various information to EDL from metadata, the timeline, and individual clip data.
 

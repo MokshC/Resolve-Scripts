@@ -9,7 +9,12 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 
 <br/><br/>
 
-## [Installing Scripts](https://github.com/MokshC/Resolve-Scripts/archive/refs/heads/main.zip)
+## Table of Contents
+- [Installing Scripts](installing-scripts)
+
+<br/><br/>
+
+## [Installing Scripts](https://github.com/MokshC/Resolve-Scripts/archive/refs/heads/main.zip)<a name="installing-scripts"/>
 ***Note**: Visible scripts change based on the page you’re on, there are folders within the scripts dropdown like “Edit”, “Color”, and “Deliver”. When on one of those pages the scripts showing will be from those folders. You can still access them from any page by navigating the drop downs.*
 
 ### Steps

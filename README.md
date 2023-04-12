@@ -10,7 +10,15 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 <br/><br/>
 
 ## Table of Contents
-- [Installing Scripts](installing-scripts)
+- [Installing Scripts](#installing-scripts)
+- [Clip Disabler](#clip-disabler)
+- [Marker Flipper](#marker-flipper)
+- [Recap Assist](#recap-assist)
+- [EDL Toolbox](#edl-toolbox)
+- [Marker Note Exporter](#marker-note-exporter)
+- [Markers to Render Queue](#markers-to-render-queue)
+- [Individual Clips to Render Queue](#individual-clips-to-render-queue)
+- [Renamer and Renumberer](#renamer-and-renumberer)
 
 <br/><br/>
 
@@ -35,7 +43,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
    
 <br/><br/>
    
-## [Clip Disabler](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_4.py)
+## [Clip Disabler](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_4.py)<a name="clip-disabler"/>
 ### Description
 Used to disable clips and flip marker colors and names.
 In the color page, in the toolbar, click “Workspace > Scripts > Clip Disabler”.
@@ -54,7 +62,7 @@ The drop down, text box, and “Flip Marker” button all work together.
 
 <br/><br/>
 
-## [Marker Flipper](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/marker_flipper_v1_1.py)
+## [Marker Flipper](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/marker_flipper_v1_1.py)<a name="marker-flipper"/>
 ### Description
 Flips marker colors and names for a selected marker color.
 
@@ -68,7 +76,7 @@ Flips marker colors and names for a selected marker color.
 
 <br/><br/>
 
-## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
+## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)<a name="recap-assist"/>
 ### Description
 Grabs stills for a recaps using a recap timeline and a search timeline.
 
@@ -86,7 +94,7 @@ Grabs stills for a recaps using a recap timeline and a search timeline.
 
 <br/><br/>
 
-## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)
+## [EDL Toolbox](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)<a name="edl-toolbox"/>
 ### Description
 Adds various information to EDL from metadata, the timeline, and individual clip data.
 
@@ -101,7 +109,7 @@ Adds various information to EDL from metadata, the timeline, and individual clip
 
 <br/><br/>
 
-## [Marker Note Exporter](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/marker_notes_exporter_v1_3.py)
+## [Marker Note Exporter](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/marker_notes_exporter_v1_3.py)<a name="marker-note-exporter"/>
 ### Description
 Creates a .txt document with all marker names, notes, and timecodes in timecode order.
 
@@ -116,7 +124,7 @@ Creates a .txt document with all marker names, notes, and timecodes in timecode 
 
 <br/><br/>
 
-## [Markers to Render Queue](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/markers_to_render_queue_v1_5.py)
+## [Markers to Render Queue](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/markers_to_render_queue_v1_5.py)<a name="markers-to-render-queue"/>
 ### Description
 Exports sections of timeline covered by markers, 1 frame for single marker or longer section for span markers. This can be used to easily create SDR stills or automate patches.
 
@@ -134,7 +142,7 @@ Exports sections of timeline covered by markers, 1 frame for single marker or lo
 
 <br/><br/>
 
-## [Individual Clips to Render Queue](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/individual_clips_to_render_queue_v1_3.py)
+## [Individual Clips to Render Queue](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/individual_clips_to_render_queue_v1_3.py)<a name="individual-clips-to-render-queue"/>
 ### Description
 Adds all clips from a selected timeline to the render queue with specified settings.
 
@@ -150,7 +158,7 @@ Adds all clips from a selected timeline to the render queue with specified setti
 
 <br/><br/>
 
-## [Renamer and Renumber](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/Rename_Renumber_v1_3.py)
+## [Renamer and Renumberer](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/Rename_Renumber_v1_3.py)<a name="renamer-and-renumberer"/>
 ### Description
 Can rename or renumber any image sequence, or any set of files in general!
 

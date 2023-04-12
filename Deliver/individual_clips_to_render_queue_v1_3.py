@@ -110,7 +110,10 @@ def source_names(tl):
 	out_lst = []
 	for clip in clip_lst:
 		if clip.GetClipEnabled():
-			name_lst.append(str(clip.GetMediaPoolItem().GetClipProperty('Reel Name')))
+			try:	# if there is no mediapool item get clip name
+				name_lst.append(str(clip.GetMediaPoolItem().GetClipProperty('Reel Name')))
+			except:
+				name_lst.append(str(clip.GetName()))
 			in_lst.append(clip.GetStart())
 			out_lst.append(clip.GetEnd())
 		else:

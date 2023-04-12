@@ -1,3 +1,6 @@
+[comment]: <> (The GitHub Repo for this project can be found at https://github.com/MokshC/Resolve-Scripts/)
+
+
 # Resolve-Scripts
 Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/). All of these are scripts I use professionally, and they greatly improve my workflow. I believe everyone should have access to them, so here they are.
 

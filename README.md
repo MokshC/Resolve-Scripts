@@ -108,7 +108,7 @@ Adds various information to EDL from metadata, the timeline, and individual clip
 4. In the "What timeline is it referencing?" dropdown select the timeline that was used to create the EDL
 5. In the "What track is it referencing?" dropdown select the track that was used to create the EDL, if the track is not visible click "Refresh Tracklist" and try again
 6. In the checkboxes below select all the information you want to add to the EDL
-7. Click "Add to EDL!". A new EDL should be created in the same location with the name new_[name of EDL]
+7. Click "Add to EDL!". The EDL should be edited, the original will now be named old_[name of EDL]
 
 <br/><br/>
 

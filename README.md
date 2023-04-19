@@ -79,7 +79,7 @@ Flips marker colors and names for a selected marker color.
 
 <br/><br/>
 
-## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_2.py)<a name="recap-assist"/>
+## [Recap Assist](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Recap_Assist_v1_4.py)<a name="recap-assist"/>
 ### Description
 Grabs stills for a recaps using a recap timeline and a search timeline.
 

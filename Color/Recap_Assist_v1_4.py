@@ -73,8 +73,17 @@ def main_ui():
 					'Events': {'ItemDoubleClicked': True, 'ItemClicked': True}, "Weight": 10}),
 			]),
 			
-			# Export button
+			
 			ui.HGap(),
+			
+			# Exact match checkbox
+			ui.HGroup({}, [
+				ui.VGap(),
+				ui.CheckBox({"ID": "exact_check","Text": "Exact Matches Only", "Checked": True, "Weight": 1}),
+				ui.VGap()
+			]),
+
+			# Export button
 			ui.HGroup({}, [
 				ui.VGap(),
 				ui.Button({"ID": "Export", "Text": "Grab Stills", "Weight": 1}),
@@ -237,7 +246,31 @@ def indexAll(idxlst, item):
 
 	indicies = []
 	for i in range(len(idxlst)):
-		if item == idxlst[i]:
+		if item.strip() == idxlst[i].strip():
+			indicies.append(i)
+
+	return indicies
+
+# checks if a var's frame in other var
+# input: var [lst in form [int, int]], searchVar [lst in form [int, int]]
+# output: True or False [bool]
+def frameInRange(var, searchVar):
+
+	# just checks if start frame and end frame in between searchVar frames
+	if (var[0] >= searchVar[0]) and (var[0] <= searchVar[1]):
+		return True
+	elif (var[1] >= searchVar[0]) and (var[1] <= searchVar[1]):
+		return True
+	return False
+
+# returns list of all indecies of an item in a list
+# input: idxlst [lst], item [lst in form [str,int,int]]
+# output: indices [lst] 
+def indexVars(exactVars, var):
+
+	indicies = []
+	for i in range(len(exactVars)):
+		if (var[0].strip() == exactVars[i][0].strip()) and frameInRange(var[1:3], exactVars[i][1:3]):
 			indicies.append(i)
 
 	return indicies
@@ -248,16 +281,30 @@ def indexAll(idxlst, item):
 def getTCs(recapClips, tl):
 
 	searchClips = getClips(tl) # get all clips from search timeline
-	# get names of every clip we are searching
+
+	# get info of every clip we are searching
 	reelNames = []
+	exactVars = []
 	# get reel name of every clip being searched in timeline
 	for clip in searchClips:
 		try:
-			reelName = clip.GetMediaPoolItem().GetClipProperty('Reel Name')
+			item = clip.GetMediaPoolItem()
+			reelName = item.GetClipProperty('Reel Name')
+			exactVar = [item.GetClipProperty('File Name'), int(item.GetClipProperty('Start')), int(item.GetClipProperty('End'))]
 		except:
 			reelName = clip.GetName()
+			exactVar = ['', -1, -1]
 
-		reelNames.append(reelName) # add reel name to list of evert clip in timeline
+		
+		
+		# if statement to remove framcounts
+		if ('.[' in exactVar[0]):
+			exactVar[0] = exactVar[0][:exactVar[0].rfind('.[')] # remove framcount and add
+		elif ('_[' in exactVar[0]):
+			exactVar[0] = exactVar[0][:exactVar[0].rfind('_[')] # remove frame count and add
+
+		reelNames.append(reelName) # add reel name to list of every clip in timeline
+		exactVars.append(exactVar) # add vars to list of every clip in timeline
 
 	tcLst = [] # placeholder
 	# for every recap clip, search the timeline for clips of the same name and record the timecode
@@ -265,17 +312,39 @@ def getTCs(recapClips, tl):
 		clip = recapClips[i] # get clip item 
 		# get name of clip
 		try:
-			name = clip.GetMediaPoolItem().GetClipProperty('Reel Name')
+			item = clip.GetMediaPoolItem()
+			name = item.GetClipProperty('Reel Name')
+			var = [item.GetClipProperty('File Name'), int(item.GetClipProperty('Start')), int(item.GetClipProperty('End'))]
 		except:
 			name = clip.GetName()
-		# if the name is found grab TCs, add it to list
-		idx = indexAll(reelNames, name) # finds every occurance of name
-		idxLen = len(idx)
-		if idxLen >= 1: # if there are occurances of the name collect TCs
-			for i in idx:
-				tc = searchClips[i].GetStart()
-				if tc not in tcLst: # if we already collected the TC ignore it
-					tcLst.append(tc)
+			var = ['', 0, 0]
+
+		# if statement to remove framcounts
+		if ('.[' in var[0]):
+			var[0] = var[0][:var[0].rfind('.[')] # remove framcount
+		elif ('_[' in var[0]):
+			var[0] = var[0][:var[0].rfind('_[')] # remove framcount
+
+		# if exact clips only checkbox checked
+		if itm['exact_check'].Checked:
+
+			# if the var is found grab TCs, add it to list
+			varidx = indexVars(exactVars, var) # finds every occurance of var
+			idxLen = len(varidx)
+			if idxLen >= 1: # if there are occurances of the var collect TCs
+				for i in varidx:
+					tc = searchClips[i].GetStart()
+					if tc not in tcLst: # if we already collected the TC ignore it
+						tcLst.append(tc)
+		else:
+			# if the name is found grab TCs, add it to list
+			nameidx = indexAll(reelNames, name) # finds every occurance of name
+			idxLen = len(nameidx)
+			if idxLen >= 1: # if there are occurances of the name collect TCs
+				for i in nameidx:
+					tc = searchClips[i].GetStart()
+					if tc not in tcLst: # if we already collected the TC ignore it
+						tcLst.append(tc)
 
 	print(sorted(tcLst))
 

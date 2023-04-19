@@ -93,7 +93,8 @@ Grabs stills for a recaps using a recap timeline and a search timeline.
 7. In the “Timelines” list select a timeline to search for shots to grab stills from.
 8. On the color page create and open a power grade album where stills will be grabbed to.
 9. Click “Grab Stills” to start the search!
-10. Read the warning splash, click “Done!”
+   - **Hint**: By default the exact clip search is checked, unchecking it will search by reel name instead of filename and timecode.
+11. Read the warning splash, click “Done!”
 
 <br/><br/>
 

@@ -256,10 +256,12 @@ def indexAll(idxlst, item):
 # output: True or False [bool]
 def frameInRange(var, searchVar):
 
-	# just checks if start frame and end frame in between searchVar frames
+	# just checks if start frame and end frame in between searchVar frames or if searchVar is inside var
 	if (var[0] >= searchVar[0]) and (var[0] <= searchVar[1]):
 		return True
 	elif (var[1] >= searchVar[0]) and (var[1] <= searchVar[1]):
+		return True
+	elif ((searchVar[0] >= var[0]) and (searchVar[0] <= var[1]) and (searchVar[1] >= var[0]) and (searchVar[1] <= var[1])):
 		return True
 	return False
 

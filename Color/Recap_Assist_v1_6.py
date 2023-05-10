@@ -256,7 +256,7 @@ def indexAll(idxlst, item):
 # output: True or False [bool]
 def frameInRange(var, searchVar):
 
-	# just checks if start frame and end frame in between searchVar frames or if searchVar is inside var
+	# just checks if start frame and end frame in between searchVar frames, or if searchVar is inside var
 	if (var[0] >= searchVar[0]) and (var[0] <= searchVar[1]):
 		return True
 	elif (var[1] >= searchVar[0]) and (var[1] <= searchVar[1]):
@@ -288,17 +288,16 @@ def getTCs(recapClips, tl):
 	reelNames = []
 	exactVars = []
 	# get reel name of every clip being searched in timeline
+	# gets name, start, and end of each as well for if exact is checked
 	for clip in searchClips:
 		try:
 			item = clip.GetMediaPoolItem()
 			reelName = item.GetClipProperty('Reel Name')
-			exactVar = [item.GetClipProperty('File Name'), int(item.GetClipProperty('Start')), int(item.GetClipProperty('End'))]
+			exactVar = [item.GetClipProperty('File Name'), int(item.GetClipProperty('Start')) + int(clip.GetLeftOffset()), int(item.GetClipProperty('Start')) + int(clip.GetRightOffset())]
 		except:
 			reelName = clip.GetName()
 			exactVar = ['', -1, -1]
 
-		
-		
 		# if statement to remove framcounts
 		if ('.[' in exactVar[0]):
 			exactVar[0] = exactVar[0][:exactVar[0].rfind('.[')] # remove framcount and add
@@ -316,7 +315,7 @@ def getTCs(recapClips, tl):
 		try:
 			item = clip.GetMediaPoolItem()
 			name = item.GetClipProperty('Reel Name')
-			var = [item.GetClipProperty('File Name'), int(item.GetClipProperty('Start')), int(item.GetClipProperty('End'))]
+			var = [item.GetClipProperty('File Name'), int(item.GetClipProperty('Start')) + int(clip.GetLeftOffset()), int(item.GetClipProperty('Start')) + int(clip.GetRightOffset())]
 		except:
 			name = clip.GetName()
 			var = ['', 0, 0]
@@ -335,8 +334,19 @@ def getTCs(recapClips, tl):
 			idxLen = len(varidx)
 			if idxLen >= 1: # if there are occurances of the var collect TCs
 				for i in varidx:
-					tc = searchClips[i].GetStart()
-					if tc not in tcLst: # if we already collected the TC ignore it
+
+					# this if statement tries to find exact frame, if it fails still will not be grabbed
+					mediaStart = int(searchClips[i].GetMediaPoolItem().GetClipProperty('Start')) + int(searchClips[i].GetLeftOffset())	# starting frame of searchclip
+					mediaEnd = int(searchClips[i].GetMediaPoolItem().GetClipProperty('End')) + int(searchClips[i].GetRightOffset())	# ending frame of searchclip
+
+					if var[1] == mediaStart:	# if ther are the same then just assign it
+						tc = searchClips[i].GetStart()
+					elif (var[1] > mediaStart) and (var[1] <= mediaEnd):	# if the start frame of the recap is inside the main timeline, grab at that point
+						tc = int(searchClips[i].GetStart()) + (var[1] - mediaStart)
+					else:	# else do not grab
+						tc = '' 	# placeholder
+
+					if (tc not in tcLst) and (tc != ''): # if we already collected the TC ignore it
 						tcLst.append(tc)
 		else:
 			# if the name is found grab TCs, add it to list

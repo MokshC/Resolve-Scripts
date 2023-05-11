@@ -162,7 +162,7 @@ Adds all clips from a selected timeline to the render queue with specified setti
 
 <br/><br/>
 
-## [Renamer and Renumberer](https://github.com/MokshC/Resolve-Scripts/blob/main/Deliver/Rename_Renumber_v1_3.py)<a name="renamer-and-renumberer"/>
+## [Renamer and Renumberer](https://github.com/MokshC/Resolve-Scripts/blob/main/Utility/Rename_Renumber_v1_3.py)<a name="renamer-and-renumberer"/>
 ### Description
 Can rename or renumber any image sequence, or any set of files in general!
 

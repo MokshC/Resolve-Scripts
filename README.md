@@ -167,7 +167,7 @@ Adds all clips from a selected timeline to the render queue with specified setti
 Can rename or renumber any image sequence, or any set of files in general!
 
 ### RENAME
-1. In the deliver page, in the toolbar, click “Workspace > Scripts > Moksh’s Renamer and Renumberer”
+1. On any page, in the toolbar, click “Workspace > Scripts > Moksh’s Renamer and Renumberer”
 2. Click Rename
 3. To select search path, click “Select Tiff Location” and navigate to the desired folder then click “Choose”.
    - **Hint**: You won’t see the image sequence there since this view only shows folders.

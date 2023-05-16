@@ -46,7 +46,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
    
 <br/><br/>
    
-## [Clip Disabler](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_4.py)<a name="clip-disabler"/>
+## [Clip Disabler](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_5.py)<a name="clip-disabler"/>
 ### Description
 Used to disable clips and flip marker colors and names.
 In the color page, in the toolbar, click “Workspace > Scripts > Clip Disabler”.
@@ -55,6 +55,11 @@ In the color page, in the toolbar, click “Workspace > Scripts > Clip Disabler�
 “Disable/Enable” button will disable and enable the currently selected clip. This can be seen on the Timeline view.
 Hint: Sometimes Resolve will only refresh the clip if you do something like click on another clip
 Hint: You don’t need to unlock any tracks for this button to work
+
+### COPYING AND PASTING FLAGS
+1. Click the "Copy Flags" button to copy flags on currently selected clip.
+2. Click the "Paste Flags" button to paste onto a new clip.
+   - **Hint**: This does not copy flag descriptions, and doesn't delete already placed flags.
 
 ### EDITING MARKERS
 The drop down, text box, and “Flip Marker” button all work together.

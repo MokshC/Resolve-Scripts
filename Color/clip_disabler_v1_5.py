@@ -34,7 +34,9 @@ def GetResolve():
 
 # Global Variables
 resolve = GetResolve()
+projectManager = resolve.GetProjectManager() # get manager
 ColorLst = ['Green','Blue','Cyan','Yellow','Red','Pink','Purple','Fuchsia','Rose','Lavender','Sky','Mint','Lemon','Sand','Cocoa','Cream']
+flags = []
 
 ################################################################################################
 # Window creation #
@@ -47,10 +49,22 @@ disp = bmd.UIDispatcher(ui) # gets display settings?
 window = disp.AddWindow({"WindowTitle": "Moksh's Clip Disabler",
 			"ID": "CDWin", 
 			'WindowFlags': {'Window': True,'WindowStaysOnTopHint': True,},
-			"Geometry": [1000,950,260,130], # x-position, y-position, width, height
+			"Geometry": [1000,950,260,200], # x-position, y-position, width, height
 			}, 
-			[ui.VGroup({"Spacing": 1}, [
+			[ui.VGroup({"Spacing": 10}, [
+				
+				# Disable Button 
 				ui.Button({"ID": "Button", "Text": "Disable/Enable", "Weight": 3}),
+				
+				# Copy Paste Flags
+				# ui.HGap(),
+				ui.HGroup({"Spacing": 5,}, [ 	
+					ui.Button({"ID": "Copy", "Text": "Copy Flags", "Weight": 1}),
+					ui.Button({"ID": "Paste", "Text": "Paste Flags", "Weight": 1})
+					]),
+					
+				# Marker Flipper
+				# ui.HGap(),
 				ui.HGroup({"Spacing": 1,}, [ 	
 					ui.ComboBox({"ID": "mark_color", "Weight": 0}),
 					ui.LineEdit({"ID": "mark_name", "Text": '', "Weight": 2}),
@@ -127,11 +141,30 @@ def disable_clip(clip):
 	else:
 		clip.SetClipEnabled(True)
 
+# Copy current clip's flags
+def _copy(ev):
+
+	global flags # allows global edit of flags
+	proj = projectManager.GetCurrentProject() # get project
+	tl = project.GetCurrentTimeline() # get tl
+	clip = timeline.GetCurrentVideoItem() # get clip
+
+	flags = clip.GetFlagList()
+	
+# Paste flags in memory onto current clip
+def _paste(ev):
+
+	proj = projectManager.GetCurrentProject() # get project
+	tl = project.GetCurrentTimeline() # get tl
+	clip = timeline.GetCurrentVideoItem() # get clip
+
+	for color in flags:
+		clip.AddFlag(color)
+
 # Change current marker color and name
 def _flip(ev):
 
 	# this block will make sure the button still works if you switch projects
-	projectManager = resolve.GetProjectManager() # get manager
 	project = projectManager.GetCurrentProject() # get project
 	tl = project.GetCurrentTimeline() # get tl
 	
@@ -151,7 +184,7 @@ def _flip(ev):
 def _main(ev):
 
 	# this block will make sure the button still works if you switch projects
-	global resolve # get resolve
+	global projectManager # allows global edit of projectManager
 	projectManager = resolve.GetProjectManager() # get manager
 	project = projectManager.GetCurrentProject() # get project
 	timeline = project.GetCurrentTimeline() # get tl
@@ -178,6 +211,8 @@ itm['mark_color'].AddItems(ColorLst) # adds items to dropdown
 # button presses
 window.On.Button.Clicked = _main
 window.On.Flip.Clicked = _flip
+window.On.Copy.Clicked = _copy
+window.On.Paste.Clicked = _paste
 window.Show()
 disp.RunLoop()
 window.Hide()

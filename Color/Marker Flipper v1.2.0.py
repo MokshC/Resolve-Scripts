@@ -107,7 +107,7 @@ def _main(ev):
 			if str(itm["mark_note"].Text) != "":
 				note = str(itm["mark_note"].Text)
 			else:
-				note = markers[frame]['note']
+				note = markers[i]['note']
 
 			tl.DeleteMarkerAtFrame(i) # delete marker
 			# replace it			

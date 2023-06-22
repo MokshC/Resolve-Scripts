@@ -98,71 +98,42 @@ def currentFrame(tl):
 
 	return frames
 
-# replace description of marker from first line
+# Edits notes of a marker based on which note was selected
+# input: num [str that is the ID of a line edit]
+# output: none
+def note_edit(num):
+
+	# this block will make sure the button still works if you switch projects
+	global projectManager # allows global edit of projectManager
+	projectManager = resolve.GetProjectManager() # get manager
+	project = projectManager.GetCurrentProject() # get project
+	tl = project.GetCurrentTimeline() # get tl
+	
+	frame = currentFrame(tl)
+	markers = tl.GetMarkers()
+
+	# if note is left empty, it is original note			
+	if str(itm[num].Text) != "":
+		desc = str(itm[num].Text)
+	else:
+		desc = markers[frame]['note']
+
+	tl.DeleteMarkerAtFrame(frame) # delete marker
+	# replace it			
+	tl.AddMarker(frame, markers[frame]["color"], markers[frame]["name"], desc, markers[frame]["duration"], markers[frame]["customData"])
+	
+
+# replace description of marker from third line
 def _edit3(ev):
+	note_edit('desc3')
 
-	# this block will make sure the button still works if you switch projects
-	global projectManager # allows global edit of projectManager
-	projectManager = resolve.GetProjectManager() # get manager
-	project = projectManager.GetCurrentProject() # get project
-	tl = project.GetCurrentTimeline() # get tl
-	
-	frame = currentFrame(tl)
-	markers = tl.GetMarkers()
-
-	# if name is left empty, it is original name			
-	if str(itm["desc3"].Text) != "":
-		desc = str(itm["desc3"].Text)
-	else:
-		desc = markers[frame]['note']
-
-	tl.DeleteMarkerAtFrame(frame) # delete marker
-	# replace it			
-	tl.AddMarker(frame, markers[frame]["color"], markers[frame]["name"], desc, markers[frame]["duration"], markers[frame]["customData"])
-
-# replace description of marker from first line
+# replace description of marker from second line
 def _edit2(ev):
-
-	# this block will make sure the button still works if you switch projects
-	global projectManager # allows global edit of projectManager
-	projectManager = resolve.GetProjectManager() # get manager
-	project = projectManager.GetCurrentProject() # get project
-	tl = project.GetCurrentTimeline() # get tl
-	
-	frame = currentFrame(tl)
-	markers = tl.GetMarkers()
-
-	# if name is left empty, it is original name			
-	if str(itm["desc2"].Text) != "":
-		desc = str(itm["desc2"].Text)
-	else:
-		desc = markers[frame]['note']
-
-	tl.DeleteMarkerAtFrame(frame) # delete marker
-	# replace it			
-	tl.AddMarker(frame, markers[frame]["color"], markers[frame]["name"], desc, markers[frame]["duration"], markers[frame]["customData"])
+	note_edit('desc2')
 
 # replace description of marker from first line
 def _edit1(ev):
-
-	# this block will make sure the button still works if you switch projects
-	global projectManager # allows global edit of projectManager
-	projectManager = resolve.GetProjectManager() # get manager
-	project = projectManager.GetCurrentProject() # get project
-	tl = project.GetCurrentTimeline() # get tl
-	
-	frame = currentFrame(tl)
-	markers = tl.GetMarkers()
-
-	# if name is left empty, it is original name			
-	if str(itm["desc1"].Text) != "":
-		desc = str(itm["desc1"].Text)
-	else:
-		desc = markers[frame]['note']
-
-	tl.DeleteMarkerAtFrame(frame) # delete marker
-	# replace it			
-	tl.AddMarker(frame, markers[frame]["color"], markers[frame]["name"], desc, markers[frame]["duration"], markers[frame]["customData"])
+	note_edit('desc1')
 
 # needed to close window
 def _close(ev):

@@ -1,5 +1,9 @@
+#!/usr/bin/env python
 # Moksh
-# -*- coding: utf-8 -*-
+
+"""
+This file serves to return a DaVinci Resolve object
+"""
 
 import sys
 
@@ -50,20 +54,25 @@ disp = bmd.UIDispatcher(ui) # gets display settings?
 window = disp.AddWindow({"WindowTitle": "Moksh's Marker Flipper",
 			"ID": "CDWin", 
 			'WindowFlags': {'Window': True,'WindowStaysOnTopHint': True,},
-			"Geometry": [1500,500,280,120], # x-position, y-position, width, height
+			"Geometry": [1500,500,280,200], # x-position, y-position, width, height
 			}, 
 			[ui.VGroup({"Spacing": 10,},[
 				# Color flip				
-				ui.HGroup({"Spacing": 1,}, [ 	
+				ui.HGroup({"Spacing": 1,"Weight":2}, [ 	
 					ui.Label({"ID": "flip_label","Text": "Flip ", "Weight": 0}),
 					ui.ComboBox({"ID": "orig_color", "Weight": 0}),
 					ui.Label({"ID": "to_label","Text": " markers to ", "Weight": 0}),
 					ui.ComboBox({"ID": "new_color", "Weight": 0})
 				]),
 				# Name flip
-				ui.HGroup({"Spacing": 1,}, [ 	
+				ui.HGroup({"Spacing": 1,"Weight":2}, [ 	
 					ui.Label({"ID": "name_label","Text": "Flip names to ", "Weight": 0}),
 					ui.LineEdit({"ID": "mark_name", "Text": '', "Weight": 1})
+				]),
+				# Note flip
+				ui.VGroup({"Spacing": 3,"Weight":5}, [ 	
+					ui.Label({"ID": "note_label","Text": "Flip notes to ", "Weight": 0}),
+					ui.LineEdit({"ID": "mark_note", "Text": '', "Weight": 5})
 				]),
 				# Flip button
 				ui.Button({"ID": "Button", "Text": "Flip!", "Weight": 0}),]), 
@@ -94,9 +103,15 @@ def _main(ev):
 			else:
 				name = markers[i]['name']
 
+			# if note is left empty, it is original note			
+			if str(itm["mark_note"].Text) != "":
+				note = str(itm["mark_note"].Text)
+			else:
+				note = markers[frame]['note']
+
 			tl.DeleteMarkerAtFrame(i) # delete marker
 			# replace it			
-			tl.AddMarker(i, str(itm["new_color"].CurrentText), name, markers[i]["note"], markers[i]["duration"], markers[i]["customData"])
+			tl.AddMarker(i, str(itm["new_color"].CurrentText), name, note, markers[i]["duration"], markers[i]["customData"])
 
 # needed to close window
 def _close(ev):
@@ -114,3 +129,4 @@ window.Show()
 disp.RunLoop()
 window.Hide()
 #################################################################################################
+

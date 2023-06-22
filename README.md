@@ -74,12 +74,12 @@ The drop down, text box, and “Flip Marker” button all work together.
 ## [Marker Note Clipboard](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Marker%20Note%20Clipboard%20v1.0.0.py)<a name="marker-note-clipboard"/>
 ### Description
 Made as a companion to [Clip Disabler](#clip-disabler). It allows you to quickly replace marker notes.
-In the color page, in the toolbar, click “Workspace > Scripts > Marker Note Clipboard”.
 
 ### Steps
-1. In the text box adding text will change the name of the marker to what you’ve typed.
+1. In the color page, in the toolbar, click “Workspace > Scripts > Marker Note Clipboard”.
+2. In the text box adding text will change the name of the marker to what you’ve typed.
    - **Hint**: Leaving it blank leaves the name unchanged, it doesn’t delete it.
-2. Have your play head on a marker and click “Edit Note” next to the note you want to enact changes!
+3. Have your play head on a marker and click “Edit Note” next to the note you want to enact changes!
 
 <br/><br/>
 

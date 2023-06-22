@@ -15,6 +15,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 ## Table of Contents
 - [Installing Scripts](#installing-scripts)
 - [Clip Disabler](#clip-disabler)
+- [Marker Note Clipboard](#marker-note-clipboard)
 - [Marker Flipper](#marker-flipper)
 - [Recap Assist](#recap-assist)
 - [EDL Toolbox](#edl-toolbox)
@@ -67,6 +68,18 @@ The drop down, text box, and “Flip Marker” button all work together.
 2. In the text box adding text will change the name of the marker to what you’ve typed.
    - **Hint**: Leaving it blank leaves the name unchanged, it doesn’t delete it.
 3. Have your play head on a marker and click “Flip Marker” to enact changes!
+
+<br/><br/>
+
+## [Marker Note Clipboard]([https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_5.py](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Marker%20Note%20Clipboard%20v1.0.0.py))<a name="marker-note-clipboard"/>
+### Description
+Made as a companion to [Clip Disabler](#clip-disabler). It allows you to quickly replace marker notes.
+In the color page, in the toolbar, click “Workspace > Scripts > Marker Note Clipboard”.
+
+### Steps
+1. In the text box adding text will change the name of the marker to what you’ve typed.
+   - **Hint**: Leaving it blank leaves the name unchanged, it doesn’t delete it.
+2. Have your play head on a marker and click “Edit Note” next to the note you want to enact changes!
 
 <br/><br/>
 

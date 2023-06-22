@@ -71,7 +71,7 @@ The drop down, text box, and “Flip Marker” button all work together.
 
 <br/><br/>
 
-## [Marker Note Clipboard]([https://github.com/MokshC/Resolve-Scripts/blob/main/Color/clip_disabler_v1_5.py](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Marker%20Note%20Clipboard%20v1.0.0.py))<a name="marker-note-clipboard"/>
+## [Marker Note Clipboard](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Marker%20Note%20Clipboard%20v1.0.0.py)<a name="marker-note-clipboard"/>
 ### Description
 Made as a companion to [Clip Disabler](#clip-disabler). It allows you to quickly replace marker notes.
 In the color page, in the toolbar, click “Workspace > Scripts > Marker Note Clipboard”.

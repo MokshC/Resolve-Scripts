@@ -98,27 +98,6 @@ def currentFrame(tl):
 
 	return frames
 
-
-# Change current marker color and name
-def _flip(ev):
-
-	# this block will make sure the button still works if you switch projects
-	project = projectManager.GetCurrentProject() # get project
-	tl = project.GetCurrentTimeline() # get tl
-	
-	frame = currentFrame(tl)
-	markers = tl.GetMarkers()
-	
-	# if name is left empty, it is original name			
-	if str(itm["mark_name"].Text) != "":
-		name = str(itm["mark_name"].Text)
-	else:
-		name = markers[frame]['name']
-
-	tl.DeleteMarkerAtFrame(frame) # delete marker
-	# replace it			
-	tl.AddMarker(frame, str(itm["mark_color"].CurrentText), name, markers[frame]["note"], markers[frame]["duration"], markers[frame]["customData"])
-
 # replace description of marker from first line
 def _edit3(ev):
 

@@ -83,7 +83,7 @@ In the color page, in the toolbar, click “Workspace > Scripts > Marker Note Cl
 
 <br/><br/>
 
-## [Marker Flipper](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/marker_flipper_v1_1.py)<a name="marker-flipper"/>
+## [Marker Flipper](https://github.com/MokshC/Resolve-Scripts/blob/main/Color/Marker%20Flipper%20v1.2.0.py)<a name="marker-flipper"/>
 ### Description
 Flips marker colors and names for a selected marker color.
 
@@ -91,7 +91,7 @@ Flips marker colors and names for a selected marker color.
 1. In the color page, in the toolbar, click “Workspace > Scripts > Marker flipper”
 2. Using drop downs in the first row you can “Flip [Color1] markers to [Color2]”
    - **Hint**: If you set them to the same color, it will only edit the name of the marker
-3. Using the “Flip names to [Name]” you can change the names of all the above [Color1] markers.
+3. Using the “Flip names to [Name]” and "Flip notes to [Note]" you can change the names or notes of all the above [Color1] markers.
    - **Hint**: Leaving it blank leaves the name unchanged, it doesn’t delete it.
 4. Hit the “Flip!” button to enact changes!
 

@@ -218,7 +218,7 @@ def export(proj, tl, in_points, out_points, path, filenames):
 		out_point = out_points[counter] - 1
 
 		if name == '':
-			name = 'source name'
+			name = '_0'
 
 		# set settings to selected by user
 		proj.SetRenderSettings({"MarkIn": in_point, "MarkOut": out_point, "TargetDir": path, "CustomName": name})

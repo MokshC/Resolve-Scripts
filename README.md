@@ -9,6 +9,7 @@ Scripts made for [Black Magic's DaVinci Resolve](https://www.blackmagicdesign.co
 ## Things to be aware of
 - The below tutorials assume you copied my file structure in your Resolve Scripts folder
 - This is tested on Windows and Linux in DaVinci Resolve 18.1.4, the below versions are all for Windows.
+- If you like my work please donate to me on [paypal](https://www.paypal.com/donate/?business=VCE2UGQEMXDPQ&no_recurring=0&currency_code=USD)
 
 <br/><br/>
 

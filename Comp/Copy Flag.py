@@ -55,7 +55,7 @@ def store(txt):
 
 	# if the folder doesn't exist, create it
 	if os.path.isdir(parent) == False:
-		os.mkdir()	
+		os.mkdir(parent)	
 	
 	# now open the path
 	storage = open(path, 'w')
